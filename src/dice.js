@@ -4,7 +4,9 @@ class Dice extends Component {
     render() {
         return (
             <div>
-                <p>Dice</p>
+                <p>
+                <i class={`fas fa-dice-${this.props.face}`}></i>
+                </p>
             </div>
         )
     }
