@@ -1,3 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dice_container {
+    display: flex;
+    justify-content: center;
+}
+
+.dice_items {
+    display: flex;
+    flex-direction: row;
+}
+
+p {
+    padding: 1em;
+}
+
 i {
     font-size: 5em;
     color: red;
