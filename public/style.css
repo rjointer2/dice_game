@@ -14,11 +14,80 @@
     flex-direction: row;
 }
 
-p {
-    padding: 1em;
-}
 
 i {
     font-size: 5em;
     color: red;
+}
+
+.roll {
+    animation-name: rolling;
+    animation-duration: 1s;
+}
+
+@keyframes rolling {
+
+    0% {
+        color: red;
+        transform: translate3d(0, 0, 0);
+    }
+
+    15% {
+        color: blue;
+        transform: translateX(10%) rotate(20deg);
+    }
+
+    30% {
+        color: blue;
+        transform: translateX(-10%) rotate(-20deg)
+    }
+
+    45% {
+        color: blue;
+        transform: translateX(10%) rotate(20deg)
+    }
+
+    60% {
+        color: blue; 
+        transform: translateX(-10%) rotate(-20deg)
+    }
+
+    70% {
+        color: blue;
+        transform: translateX(10%) rotate(20deg)
+    }
+
+    100% {
+        color: red;
+        transform: translate3d(0, 0, 0);
+    }
+
+    /* 0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    15% {
+        transform: translate3d(-15%, 0, 0), rotate3d(0, 0, 1 -5deg)
+    }
+
+    30% {
+        transform: translate3d(10%, 0, 0), rotate3d(0, 0, 1 2deg)
+    }
+
+    70% {
+        transform: translate3d(-5%, 0, 0), rotate3d(0, 0, 1 -1deg)
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    } */
+}
+
+button:hover {
+    background-color: gray;
+    cursor: pointer;
+}
+
+p {
+    padding: 1em;
 }

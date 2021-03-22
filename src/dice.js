@@ -5,7 +5,7 @@ class Dice extends Component {
         return (
             <div>
                 <p>
-                <i class={`fas fa-dice-${this.props.face}`}></i>
+                <i className={`fas fa-dice-${this.props.face} ${this.props.rolling ? 'roll' : ''}`}></i>
                 </p>
             </div>
         )

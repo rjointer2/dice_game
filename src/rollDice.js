@@ -11,7 +11,8 @@ class RollDice extends Component {
         super(props);
         this.state = {
             dice1: "one",
-            dice2: 'one'
+            dice2: 'one',
+            rolling: false
         }
         this.rollDices = this.rollDices.bind(this)
     }
@@ -26,8 +27,14 @@ class RollDice extends Component {
         ];
 
         this.setState({
-            dice1: diceSide1, dice2: diceSide2
-        })
+            dice1: diceSide1, dice2: diceSide2, rolling: true
+        });
+
+        setTimeout(() => {
+            this.setState({
+                rolling: false
+            })
+        },1000)
 
     }
 
@@ -35,12 +42,12 @@ class RollDice extends Component {
     render() {
         return (
             <div>
-                <div class="dice_items">
-                    <Dice face={this.state.dice1}/>
-                    <Dice face={this.state.dice2}/>
+                <div class="dice_items roll_dice">
+                    <Dice face={this.state.dice1} rolling={this.state.rolling}/>
+                    <Dice face={this.state.dice2} rolling={this.state.rolling}/>
                  </div>
-                 <button onClick={this.rollDices}>
-                    Click
+                 <button onClick={this.rollDices} disabled={this.state.rolling}>
+                     {this.state.rolling ? "Rolling!" : "Roll Dice"}
                  </button>
             </div>
         )
